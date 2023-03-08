@@ -1,4 +1,4 @@
-package codes.semaphore;
+package codes.semaphore12;
 
 import java.util.concurrent.Semaphore;
 
@@ -36,7 +36,7 @@ public class Connection {
     private void doConect() throws InterruptedException{
         synchronized(this){
             currentConnections++;       // depicting acquiring resource available. Note, I already decreased semaphore
-            System.out.println("Current connections active:"+currentConnections);
+            System.out.println("Current connections active:"+semaphore.availablePermits());
         }
         Thread.sleep(2000);     // utilising connection
         
